@@ -23,11 +23,11 @@ script:
   # Tagging
   - docker tag udagram-api-feed surdya/udagram-api-feed
   - docker tag udagram-api-user surdya/udagram-api-user
-  - docker tag udagram-frontend surdya/udagram-frontend
+  - docker tag udagram-frontend surdya/udagram-frontend:v1
   - docker tag reverseproxy surdya/reverseproxy
 after_success:
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
-  - docker push surdya/udagram-api-feed:latest
-  - docker push surdya/udagram-api-user:latest
-  - docker push surdya/udagram-frontend:latest
-  - docker push surdya/reverseproxy:latest
+  - docker push surdya/udagram-api-feed
+  - docker push surdya/udagram-api-user
+  - docker push surdya/udagram-frontend:v1
+  - docker push surdya/reverseproxy
