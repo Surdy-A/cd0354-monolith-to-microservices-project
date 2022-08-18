@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
       - name: udagram-frontend
-        image: surdya/udagram-frontend
+        image: surdya/udagram-frontend:v1
         ports:
         - containerPort: 80
